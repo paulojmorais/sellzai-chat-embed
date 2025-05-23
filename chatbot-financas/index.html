@@ -44,13 +44,16 @@
     };
   </script>
 
-  <script type="text/javascript">
+<script type="text/javascript">
+  window.onload = () => {
     const chatInstance_LBCMMf = new EBSSSChatModule({
       type: 'mod',
       modalOpenButton: document.querySelector('#modal-open-button-LBCMMf'),
       ...CHAT_VARS_LBCMMf,
     }).init();
-  </script>
+  };
+</script>
+
 
   <script type="text/babel">
     ReactDOM.createRoot(document.getElementById("root-LBCMMf")).render(
