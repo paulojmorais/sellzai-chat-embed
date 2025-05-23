@@ -1,61 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <title>Chatbot Embed</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Ebzai</title>
 
-  <!-- React, Babel e Axios -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- React e Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
 
-  <!-- Estilos do Chat -->
-  <link rel="stylesheet" href="https://chatwidget.ebzai.app/chat/chat-emb.css" />
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Estilos e scripts do chat -->
+    <link rel="stylesheet" href="https://chatwidget.ebzai.app/chat/chat-emb.css">
+    <script src="https://chatwidget.ebzai.app/chat/core.js"></script>
+    <script type="text/babel" src="https://chatwidget.ebzai.app/chat/react.js"></script>
 </head>
 <body>
-  <!-- Container para o componente React -->
-  <div id="root-zT3pwj"></div>
+    <!-- Contêiner do chat -->
+    <div id="root-egAuAQ"></div>
 
-  <!-- Scripts principais -->
-  <script src="https://chatwidget.ebzai.app/chat/core.js"></script>
-  <script type="text/babel" src="https://chatwidget.ebzai.app/chat/react.js"></script>
+    <!-- Variáveis de configuração do chat -->
+    <script type="text/javascript">
+        const CHAT_VARS_egAuAQ = {
+            guid: 'egAuAQ',
+            chatChannelId: '1bdd4817-0546-4db5-a275-53cd4308f921',
+            tenantId: 'my',
+            tenantApiBaseURL: 'api.ebzai.app',
+            assetsBaseUrl: 'https://chatwidget.ebzai.app',
+            domainBaseURL: 'https://my.ebzai.app',
+            pusherCluster: 'eu',
+            pusherClient: '24a08ac01fc363ff5315',
+            type: 'emb',
+        };
+    </script>
 
-  <!-- Variáveis de configuração -->
-  <script type="text/javascript">
-    const CHAT_VARS_zT3pwj = {
-      guid: 'zT3pwj',
-      chatChannelId: '1bdd4817-0546-4db5-a275-53cd4308f921',
-      tenantId: 'my',
-      tenantApiBaseURL: 'api.ebzai.app',
-      assetsBaseUrl: 'https://chatwidget.ebzai.app',
-      domainBaseURL: 'https://my.ebzai.app',
-      pusherCluster: 'eu',
-      pusherClient: '24a08ac01fc363ff5315',
-      type: 'emb',
-    };
-  </script>
+    <!-- Inicialização do módulo de chat -->
+    <script type="text/javascript">
+        const chatInstance_egAuAQ = new EBSSSChatModule({
+            type: 'emb',
+            modalOpenButton: null,
+            ...CHAT_VARS_egAuAQ,
+        }).init();
+    </script>
 
-  <!-- Inicialização do chat -->
-  <script type="text/javascript">
-    window.addEventListener('DOMContentLoaded', () => {
-      const chatInstance_zT3pwj = new EBSSSChatModule({
-        type: 'emb',
-        modalOpenButton: null,
-        ...CHAT_VARS_zT3pwj,
-      }).init();
-    });
-  </script>
-
-  <!-- Renderização React -->
-  <script type="text/babel">
-    window.addEventListener('DOMContentLoaded', () => {
-      ReactDOM.createRoot(
-        document.getElementById("root-zT3pwj")
-      ).render(
-        <RenderReactChatInstance {...CHAT_VARS_zT3pwj} sufixGUID={'zT3pwj'} />
-      );
-    });
-  </script>
+    <!-- Renderização do componente React do chat -->
+    <script type="text/babel">
+        ReactDOM.createRoot(
+            document.getElementById("root-egAuAQ")
+        ).render(
+            <RenderReactChatInstance {...CHAT_VARS_egAuAQ} sufixGUID={'egAuAQ'} />
+        );
+    </script>
 </body>
 </html>
