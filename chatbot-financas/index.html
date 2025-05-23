@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chatbot Finanças</title>
+  <!-- React & Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!-- CSS do chat -->
+  <link rel="stylesheet" href="https://chatwidget.ebzai.app/chat/chat-mod.css">
+</head>
+<body>
+  <!-- Botão para abrir modal -->
+  <button id="modal-open-button-LBCMMf" class="btn btn-primary modal-button-chat my-2">
+    Abrir
+    <svg width="16px" height="16px" viewBox="0 0 32 32">
+      <g fill="#fff">
+        <path d="M116,281 C114.832,281 113.704,280.864 112.62,280.633 L107.912,283.463 L107.975,278.824 C104.366,276.654 102,273.066 102,269 C102,262.373 108.268,257 116,257 C123.732,257 130,262.373 130,269 C130,275.628 123.732,281 116,281 Z M116,255 C107.164,255 100,261.269 100,269 C100,273.419 102.345,277.354 106,279.919 L106,287 L113.009,282.747 C113.979,282.907 114.977,283 116,283 C124.836,283 132,276.732 132,269 C132,261.269 124.836,255 116,255 Z" />
+      </g>
+    </svg>
+  </button>
+
+  <!-- Contêiner onde o React vai renderizar -->
+  <div id="root-LBCMMf"></div>
+
+  <!-- Scripts do Chat -->
+  <script src="https://chatwidget.ebzai.app/chat/core.js"></script>
+  <script type="text/babel" src="https://chatwidget.ebzai.app/chat/react.js"></script>
+
+  <script type="text/javascript">
+    const CHAT_VARS_LBCMMf = {
+      guid: 'LBCMMf',
+      chatChannelId: '1bdd4817-0546-4db5-a275-53cd4308f921',
+      tenantId: 'my',
+      tenantApiBaseURL: 'api.ebzai.app',
+      assetsBaseUrl: 'https://chatwidget.ebzai.app',
+      domainBaseURL: 'https://my.ebzai.app',
+      pusherCluster: 'eu',
+      pusherClient: '24a08ac01fc363ff5315',
+      type: 'mod',
+    };
+  </script>
+
+  <script type="text/javascript">
+    const chatInstance_LBCMMf = new EBSSSChatModule({
+      type: 'mod',
+      modalOpenButton: document.querySelector('#modal-open-button-LBCMMf'),
+      ...CHAT_VARS_LBCMMf,
+    }).init();
+  </script>
+
+  <script type="text/babel">
+    ReactDOM.createRoot(document.getElementById("root-LBCMMf")).render(
+      <RenderReactChatInstance {...CHAT_VARS_LBCMMf} sufixGUID={'LBCMMf'} />
+    );
+  </script>
+</body>
+</html>
